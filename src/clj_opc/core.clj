@@ -7,13 +7,16 @@
    [gloss.core :as gloss]
    [gloss.io :as io]))
 
-(def protocol
+(def opc-protocol
   (gloss/compile-frame
-    (gloss/finite-frame :uint32
-      (gloss/string :utf-8))
-    pr-str
-    edn/read-string))
-
+   [:ubyte 
+    :ubyte
+    :ubyte
+    :ubyte
+    :ubyte
+    :ubyte
+    :ubyte
+    :ubyte]))
 
 (defn wrap-duplex-stream
   [protocol s]
@@ -28,4 +31,4 @@
 (defn client
   [host port]
   (d/chain (tcp/client {:host host, :port port})
-           #(wrap-duplex-stream protocol %)))
+           #(wrap-duplex-stream opc-protocol %)))
