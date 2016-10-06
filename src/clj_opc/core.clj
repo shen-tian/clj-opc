@@ -29,19 +29,3 @@
   [host port]
   (d/chain (tcp/client {:host host, :port port})
            #(wrap-duplex-stream protocol %)))
-
-
-(defn start-server
-  [handler port]
-  (tcp/start-server
-    (fn [s info]
-      (handler (wrap-duplex-stream protocol s) info))
-    {:port port}))
-
-
-(defn fast-echo-handler
-  [f]
-  (fn [s info]
-    (s/connect
-      (s/map f s)
-      s)))
