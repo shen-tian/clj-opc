@@ -1,6 +1,6 @@
 (defproject clj-opc "0.1.0-SNAPSHOT"
   :description "Open Pixel Control Lib for Clojure"
-  :url "http://example.com/FIXME"
+  :url "https://github.com/shen-tian/clj-opc"
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.8.0"]
