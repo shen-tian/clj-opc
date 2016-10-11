@@ -1,4 +1,4 @@
-(defproject clj-opc "0.1.0"
+(defproject clj-opc "0.1.0-SNAPSHOT"
   :description "Open Pixel Control Lib for Clojure"
   :url "https://github.com/shen-tian/clj-opc"
   :license {:name "MIT License"

@@ -9,4 +9,4 @@ Open Pixel Control client for Clojure
 
 Include, in your `project.clj`:
 
-    [clj-opc "0.1.0"]
+    [clj-opc "0.1.0-SNAPSHOT"]
