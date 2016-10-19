@@ -5,8 +5,24 @@
 
 Open Pixel Control client for Clojure
 
-## User
+## Usages
 
 Include, in your `project.clj`:
 
     [clj-opc "0.1.0-SNAPSHOT"]
+
+Example code:
+
+    (use 'clj-opc.core)
+    
+    (def opc (client "127.0.0.1" 7890 1000))
+    (show! opc [{:r 255 :g 0 :b 255}])
+    (put! opc [0 0 [255 0 255]])
+    (close! opc)
+
+The last param in 'client' is delay before trying. The client will
+accept data without making a live connection, and will always try to connect.
+Once a connectin is established to an OPC server, it will start transmitting.
+    
+
+
