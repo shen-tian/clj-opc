@@ -6,4 +6,6 @@
      :dependencies [[org.clojure/clojure "1.8.0"]
                     [aleph "0.4.1"]
                     [manifold "0.1.5"]
-                    [gloss "0.2.5"]])
+                    [gloss "0.2.5"]]
+     :scm {:name git
+           :url "https://github.com/shen-tian/clj-opc"})
