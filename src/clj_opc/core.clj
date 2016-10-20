@@ -21,7 +21,6 @@
                  (map #(vector (:r %) (:g %) (:b %)) 
                       colors))))
 
-;; Definitely don't need the duplex stream stuff here...
 (defn- wrap-duplex-stream
   [protocol s]
   (let [out (s/stream)]
@@ -38,13 +37,17 @@
 
 (defn- set-discard [state]
   (assoc state :in
-         (let [s (s/stream)]
+         (let [s (if (contains? state :in) 
+                   (:in state) 
+                   (s/stream))]
            (s/consume (fn [x] nil) s)
            s)))
 
 (defn- set-transmit [state out]
   (assoc state :in
-         (let [s (s/stream)]
+         (let [s (if (contains? state :in)
+                   (:in state)
+                   (s/stream))]
            (s/connect s out)
            s)))
 
