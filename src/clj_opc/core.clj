@@ -23,6 +23,7 @@
 
 (defn- wrap-duplex-stream
   [protocol s]
+  "somwhat template code"
   (let [out (s/stream)]
     (s/connect
       (s/map #(io/encode protocol %) out)
