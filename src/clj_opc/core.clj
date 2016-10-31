@@ -78,8 +78,7 @@
    (client "localhost" 7890))
   ([host port]
    (client host port 1000))
-  ([host port delay]
-   
+  ([host port delay]   
    (let [state (atom {})]
      (do
        (prn (str "Connecting to " host ":" port))

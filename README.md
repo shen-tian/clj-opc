@@ -16,7 +16,7 @@ Example code:
     (use 'clj-opc.core)
     
     (def opc (client "127.0.0.1" 7890 1000))
-    (show! opc [{:r 255 :g 0 :b 255} {:r 0 :g 255 :b 0]) ;; purple and green.
+    (show! opc [{:r 255 :g 0 :b 255} {:r 0 :g 255 :b 0}]) ;; purple and green.
     (put! opc [0 0 [255 0 255 0 255 0]]) ;; and again
     (close! opc)
 
