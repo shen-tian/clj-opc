@@ -9,7 +9,7 @@ A [Open Pixel Control](http://openpixelcontrol.org/) client for Clojure.
 
 If using `lein`, include, in your `project.clj`:
 
-    [clj-opc "0.1.0"]
+    [clj-opc "0.1.1"]
 
 Example code:
 
