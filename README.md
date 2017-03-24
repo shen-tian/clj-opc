@@ -13,12 +13,14 @@ If using `lein`, include, in your `project.clj`:
 
 Example code:
 
-    (use 'clj-opc.core)
+````clojure
+(use 'clj-opc.core)
     
-    (def opc (client "127.0.0.1" 7890 1000))
-    (show! opc [{:r 255 :g 0 :b 255} {:r 0 :g 255 :b 0}]) ;; purple and green.
-    (put! opc [0 0 [255 0 255 0 255 0]]) ;; and again
-    (close! opc)
+(def opc (client "127.0.0.1" 7890 1000))
+(show! opc [{:r 255 :g 0 :b 255} {:r 0 :g 255 :b 0}]) ;; purple and green.
+(put! opc [0 0 [255 0 255 0 255 0]]) ;; and again
+(close! opc)
+````
 
 The last param in 'client' is delay before trying. The client will
 accept data without making a live connection, and will always try to connect.
